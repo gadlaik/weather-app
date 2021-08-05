@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
+
+/* Global styles */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Mukta";
+}
+
+body {
+  background-image: url(./modules/images/clearSunnySky.jpg);
+}
+
+/* Form */
+
+.container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-result {
+  height: 10rem;
+}
+
+.weather-form {
+  margin: auto;
+  padding: 1.2rem 2rem;
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 0.2rem;
+}
+
+.weather-form > input {
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* weather desc */
+
+.weather-desc {
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 2px black;
+}
+
+.far,
+.fas {
+  font-size: 5rem;
+  text-shadow: 1px 1px 2px black;
+}
+.fa-sun {
+  color: yellow;
+}
+.fa-cloud-rain {
+  color: aqua;
+}
+.fa-cloud-moon-rain {
+  color: blue;
+}
+.fa-cloud {
+  color: gainsboro;
+}
