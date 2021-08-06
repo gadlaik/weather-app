@@ -86,3 +86,22 @@ p {
 .fa-cloud {
   color: gainsboro;
 }
+
+/* units */
+
+.temp-units {
+  position: absolute;
+  right: 1rem;
+  font-size: 3rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  z-index: 100;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  cursor: pointer !important;
+  transition-duration: 200ms;
+}

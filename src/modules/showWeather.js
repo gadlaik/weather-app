@@ -13,8 +13,6 @@ export default function showWeather(locat) {
     .then((data) => {
       let weather = data.weather[0].main;
 
-      console.log(data);
-
       if (weather == "Clouds") {
         desc.innerHTML = `<i class="fas fa-cloud"></i>`;
         body.style.backgroundImage = `url(${cloudy})`;
@@ -25,11 +23,22 @@ export default function showWeather(locat) {
         desc.innerHTML = `<i class="fas fa-cloud-rain"></i>`;
         body.style.backgroundImage = `url(${rainy})`;
       }
-      desc.innerHTML += `<h2>${locat.toUpperCase()} - ${data.weather[0].description.toUpperCase()} ${(
-        data.main.temp - 273.15
+      if (
+        localStorage.getItem("unit") == "celsius" ||
+        localStorage.getItem("unit") == null
       )
-        .toString()
-        .substr(0, 2)}°C<h2>`;
+        desc.innerHTML += `<h2>${locat.toUpperCase()} - ${data.weather[0].description.toUpperCase()} ${(
+          data.main.temp - 273.15
+        )
+          .toString()
+          .substr(0, 2)}°C<h2>`;
+      else
+        desc.innerHTML += `<h2>${locat.toUpperCase()} - ${data.weather[0].description.toUpperCase()} ${(
+          (data.main.temp * 9) / 5 -
+          459.67
+        )
+          .toString()
+          .substr(0, 2)}°F<h2>`;
 
       form.reset();
     })
