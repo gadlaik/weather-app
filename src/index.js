@@ -35,11 +35,13 @@ document.querySelector(".temp-units").addEventListener("click", (e) => {
     document.querySelector(".fahrenheit").style.background = "orangered";
     document.querySelector(".celsius").style.background = "limegreen";
     localStorage.setItem("unit", "celsius");
-    showWeather(localStorage.getItem("location"));
+    if (localStorage.getItem("location") != null)
+      showWeather(localStorage.getItem("location"));
   } else if (e.target.classList.contains("fahrenheit")) {
     document.querySelector(".fahrenheit").style.background = "limegreen";
     document.querySelector(".celsius").style.background = "orangered";
     localStorage.setItem("unit", "fahrenheit");
-    showWeather(localStorage.getItem("location"));
+    if (localStorage.getItem("location") != null)
+      showWeather(localStorage.getItem("location"));
   }
 });
